@@ -1,0 +1,1201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <title>Pinkie Nails and Spa - Contact Us</title>
+</head>
+<style>
+    /*----general----*/
+
+    /*--fonts--*/
+
+    @font-face {
+        font-family: "Chalk";
+        src: url("KGNoRegretsSketch.ttf");
+    }
+
+    @font-face {
+        font-family: "Charline";
+        src: url("Charline font.otf");
+    }
+
+    /*--convenient and quick positioning classes--*/
+
+    .absolute {
+        position: absolute;
+        z-index: 100;
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    /*--convenient class to cancel any and all padding--*/
+
+    .cancel {
+        padding: 0;
+    }
+
+    /*--link behavior--*/
+
+    a:link {
+        color: pink;
+    }
+
+    a:visited {
+        color: pink;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    /*--all images take up full width of its container--*/
+
+    img {
+        width: 100%;
+    }
+
+    /*---hide non-mobile elements/design/layout---*/
+
+    /*--hide tablet design/layout/elements--*/
+
+    /*-hide tablet version of banner image-*/
+
+    #tabletbanner {
+        display: none;
+    }
+
+    /*-hide tablet version of map-*/
+
+    .tabletmap {
+        display: none;
+    }
+
+    /*--hide laptop design/layout/elements--*/
+
+    /*-hide laptop version of navigation-*/
+
+    .lap-nav {
+        display: none;
+    }
+
+    /*-hide laptop version of service submenu-*/
+
+    .servhover {
+        display: none;
+    }
+
+    /*-hide laptop version of main content-*/
+
+    .laptopcontactinfo {
+        display: none;
+    }
+
+    .laptopmap {
+        display: none;
+    }
+
+    /*----mobile/default website----*/
+
+    /*----nav - mobile and tablet----*/
+
+    .nav {
+        padding: 2% 5% 0% 5%;
+        position: fixed;
+        background-color: white;
+        width: 100%;
+        z-index: 200;
+        opacity: 0.9;
+        height: 13vw;
+    }
+
+    /*--overhang--*/
+
+    /*-hamburger-*/
+
+    .hamburgerline {
+        background-color: pink;
+        margin: 1.3vw 0;
+        height: 1vw;
+        width: 100%;
+        border-radius: 40%;
+    }
+
+    .hamburger {
+        width: 7%;
+        padding-top: 1%;
+    }
+
+    /*-everything else in overhang-*/
+
+    .overhang {
+        color: pink;
+        font-family: "Chalk";
+        font-size: 5vw;
+        justify-self: end;
+        padding-top: 1.5%;
+    }
+
+    /*----menu----*/
+
+    #menu {
+        width: 100%;
+        background-color: white;
+        position: fixed;
+        opacity: 0.9;
+        z-index: 200;
+        top: 13vw;
+    }
+
+    .menu-item {
+        color: pink;
+        font-family: "Charline";
+        padding: 5vw 7vw;
+        height: 12.5vw;
+        padding-right: 0vw;
+    }
+
+    /*--menu animations--*/
+
+    /*-slide menu down-*/
+
+    @keyframes slide {
+        from {
+            height: 0vw;
+        }
+        to {
+            height: 70vw;
+        }
+    }
+
+    /*-slide menu up-*/
+
+    @keyframes slideup {
+        from {
+            height: 70vw;
+        }
+        to {
+            height: 0vw;
+        }
+    }
+
+    /*--menu animation classes--*/
+
+    /*-slide menu up-*/
+
+    .slideup {
+        animation-name: slideup;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        overflow: hidden;
+        padding-top: none;
+    }
+
+    /*-slide menu down-*/
+
+    .slidedown {
+        height: 75vw;
+        animation-name: slide;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        overflow: hidden;
+    }
+
+    /*----submenu----*/
+
+    /*--design of down arrow to open services submenu--*/
+
+    .down-arrow {
+        border: solid pink;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+        text-align: right;
+    }
+
+    /*--submenu/submenu design--*/
+
+    ul {
+        list-style: none;
+        margin-bottom: 0vw;
+    }
+
+    li {
+        color: pink;
+        font-family: "Charline";
+        font-size: 4vw;
+        padding: 2vw;
+    }
+
+    /*--submenu animations--*/
+
+    /*-expand menu for submenu/to open submenu-*/
+
+    @keyframes slidesub {
+        from {
+            height: 70vw;
+        }
+        to {
+            height: 137vw;
+        }
+    }
+
+    /*-contract/compress menu to close submenu but display menu-*/
+
+    @keyframes slidesubup {
+        from {
+            height: 137vw;
+        }
+        to {
+            height: 70vw;
+        }
+    }
+
+    /*-close both menu and submenu all together-*/
+
+    @keyframes slideallup {
+        from {
+            height: 137vw;
+        }
+        to {
+            height: 0vw;
+        }
+    }
+
+    /*-class to hide submenu-*/
+
+    .submenu-collapse {
+        display: none;
+    }
+
+    /*--submenu animation classes--*/
+
+    /*-expand menu to open submenu-*/
+
+    .slidesub {
+        animation-name: slidesub;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        overflow: hidden;
+    }
+
+    /*-collapse submenu to return to regular menu-*/
+
+    .slidesubup {
+        animation-name: slidesubup;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        overflow: hidden;
+    }
+
+    /*-close both menu and submenu all together-*/
+
+    .slideallup {
+        height: 137vw;
+        animation-name: slideallup;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        overflow: hidden;
+    }
+
+    /*----banner----*/
+
+    /*--banner text--*/
+
+    .top {
+        font-size: 15vw;
+        font-family: "Chalk";
+        color: white;
+        top: 40%;
+        text-align: center;
+        width: 100%;
+        font-weight: 100;
+    }
+
+    /*--banner image--*/
+
+    #banner {
+        width: 100%;
+        height: auto;
+    }
+
+    /*----main content----*/
+
+    /*--map--*/
+
+    .mobilemap {
+        margin-top: 15vw;
+    }
+
+    /*--specifications for Google Maps API--*/
+
+    #map {
+        width: 100%;
+        height: 100vw;
+        background-color: grey;
+        margin: 20vw 0vw;
+    }
+
+    /*--contact information--*/
+
+    .mobilecontact {
+        padding-top: 15vw;
+    }
+
+    .titles {
+        color: pink;
+        font-family: "Charline";
+        font-size: 7vw;
+        margin: 15vw 0vw 0vw 5vw;
+    }
+
+    /*-different margin for the mobile contact us title-*/
+
+    #contact {
+        margin-top: 25vw;
+    }
+
+    hr {
+        margin: 0vw 0vw 0vw 5vw;
+    }
+
+    /*-address-*/
+
+    .address {
+        padding: 0vw 10vw 5vw 10vw;
+        font-size: 6vw;
+        font-family: "Helvetica"
+    }
+
+    /*-hours-*/
+
+    .mobilehours {
+        padding: 0vw 10vw;
+    }
+
+    /*--Contact us form--*/
+
+    .mobileform {
+        padding: 20vw 10vw 10vw 10vw;
+    }
+
+    /*-labels of contact us form inputs-*/
+
+    .labels {
+        font-size: 5vw;
+    }
+
+    /*-inputs-*/
+
+    input {
+        border: 1px solid gray;
+        padding: 2vw 2vw 2vw 3vw;
+        width: 100%;
+    }
+
+    /*-submit button-*/
+
+    .submit {
+        background-color: transparent;
+        border: 1px solid pink;
+        font-family: "Charline";
+        color: pink;
+        font-size: 5vw;
+        margin-top: 10vw;
+        font-weight: 100;
+    }
+
+    /*two different message ids?*/
+
+    #message {
+        border: 1px solid gray;
+        padding: 2vw 2.3vw;
+        width: 100%;
+        font-size: 4vw;
+    }
+
+    /*----adjustments/changes for tablet website----*/
+
+    @media only screen and (min-width: 425px) {
+
+        /*----general----*/
+        /*--hide mobile/default design/layout/elements--*/
+        /*-hide mobile banner image-*/
+        #banner {
+            display: none;
+        }
+
+        /*-hide mobile map-*/
+        .mobilemap {
+            display: none;
+        }
+
+        /*--show tablet design/layout/elements--*/
+        /*-show tablet banner image-*/
+        #tabletbanner {
+            display: block;
+        }
+
+        /*-show tablet map-*/
+        .tabletmap {
+            display: flex;
+            margin-top: 15vw;
+        }
+
+        /*----tablet menu----*/
+        /*--adjust menu animations--*/
+
+    /*-slide menu down-*/
+
+    @keyframes slide {
+        from {
+            height: 0vw;
+        }
+        to {
+            height: 45vw;
+        }
+    }
+
+    /*-slide menu up-*/
+
+    @keyframes slideup {
+        from {
+            height: 45vw;
+        }
+        to {
+            height: 0vw;
+        }
+    }
+
+        /*--adjust height of open menu--*/
+        .slidedown {
+            height: 45vw;
+        }
+
+        /*--adjust padding and height of menu-items-*/
+        .menu-item {
+            padding: 1vw 7vw;
+            height: 8.5vw;
+            padding-right: 0vw;
+        }
+
+        /*---tablet submenu---*/
+
+    /*--adjust submenu animations--*/
+
+    /*-expand menu for submenu/to open submenu-*/
+
+    @keyframes slidesub {
+        from {
+            height: 45vw;
+        }
+        to {
+            height: 100vw;
+        }
+    }
+
+    /*-contract/compress menu to close submenu but display menu-*/
+
+    @keyframes slidesubup {
+        from {
+            height: 100vw;
+        }
+        to {
+            height: 45vw;
+        }
+    }
+
+    /*-close both menu and submenu all together-*/
+
+    @keyframes slideallup {
+        from {
+            height: 100vw;
+        }
+        to {
+            height: 0vw;
+        }
+    }
+
+        /*--adjust submenu margin--*/
+
+        .sub {
+            margin-bottom: 3.5vw;
+        }
+
+        /*--adjust font size of submenu items--*/
+        li {
+            font-size: 2.5vw;
+        }
+
+        /*----banner----*/
+        /*--adjust the position of both text and image to accomodate tablet nav bar--*/
+        .banner3 {
+            top: 13vw;
+        }
+
+        /*--adjust the position and font-size of the banner text--*/
+        .top {
+            font-size: 10vw;
+            top: 30%;
+        }
+
+        /*----main----*/
+        /*--tabletmap--*/
+        #tabletmap {
+            height: 50vw;
+            margin-top: 20vw;
+            margin-bottom: 20vw;
+        }
+
+        /*--adjust margins and font sizes of headings/titles--*/
+        .titles {
+            margin-top: 0vw;
+            font-size: 5vw;
+        }
+
+        /*--adjust padding of contact information section (includes address and hours--*/
+        .mobilecontact {
+            padding: 15vw 10vw 10vw 10vw;
+        }
+
+        /*--adjust font-size of address--*/
+        .address {
+            font-size: 3vw;
+        }
+
+        /*--adjust margin of contact us title/heading--*/
+        #contact {
+            margin-top: 0vw;
+        }
+
+        /*--adjust padding and font-sizes of contact us form--*/
+        .mobileform {
+            padding-top: 10vw;
+        }
+
+        .labels {
+            font-size: 3vw;
+        }
+
+        input {
+            font-size: 3vw;
+            padding: 1vw;
+        }
+
+        #message {
+        padding: 0.5vw 1vw;
+        font-size: 3vw;
+    }
+
+    }
+
+    /*----adjustments/changes for laptop website----*/
+
+    @media only screen and (min-width: 768px) {
+
+        /*----general----*/
+        /*---hide mobile/tablet elements---*/
+        /*--hide mobile/tablet nav bar--*/
+        .nav {
+            display: none;
+        }
+
+        /*-hide hamburger-*/
+        .hamburger {
+            display: none;
+        }
+
+        .hamburgerline {
+            display: none;
+        }
+
+        /*-hide overhang-*/
+        .overhang {
+            display: none;
+        }
+
+        /*--hide menu--*/
+        .menu {
+            display: none;
+        }
+
+        .menu-item {
+            display: none;
+        }
+
+        /*-hide menu animation classes-*/
+        .slideup {
+            display: none;
+        }
+
+        .slidedown {
+            display: none;
+        }
+
+        /*--hide submenu--*/
+        .sub {
+            display: none;
+        }
+
+        /*-hide submenu animation classes-*/
+        .slidesub {
+            display: none;
+        }
+
+        /*--hide main content--*/
+        /*-hide map-*/
+        .tabletmap {
+            display: none;
+        }
+
+        /*-hide titles and lines-*/
+        .titles {
+            display: none;
+        }
+
+        hr {
+            display: none;
+        }
+
+        /*-hide contact information (address and hours)-*/
+        .mobilecontact {
+            display: none;
+        }
+
+        /*-hide contact us form-*/
+        .mobileform {
+            display: none;
+        }
+
+        /*---reveal/show laptop elements---*/
+        /*--show laptop navigation--*/
+        .lap-nav {
+            display: flex;
+            padding: 1.5%;
+            color: pink;
+            white-space: nowrap;
+        }
+
+        /*--show laptop main content--*/
+        /*-show laptop map-*/
+        .laptopmap {
+            margin: 0vw;
+            display: flex;
+        }
+
+        /*-show laptop contact information (address and hours) and contact us form-*/
+        .laptopcontactinfo {
+            display: flex;
+            margin-top: 0vw;
+            padding: 0vw 15vw 17vw 15vw;
+        }
+
+        /*----nav----*/
+        .nav-item {
+            text-align: center;
+            font-size: 1.1vw;
+        }
+
+        /*---service submenu---*/
+        .servhover {
+            top: 1.5vw;
+            background-color: white;
+            opacity: 0.9;
+            z-index: 500;
+            padding-top: 1.5vw;
+            border-radius: 5%;
+        }
+
+        .laptopsub {
+            padding-left: 0vw;
+        }
+
+        .laptopitem {
+            font-size: 1vw;
+            z-index: 500;
+            padding: 1vw;
+            text-align: left;
+        }
+
+        /*--submenu hover properties--*/
+        /*-show submenu when hovering over Services link/tab-*/
+        .servlink:hover .servhover {
+            display: block;
+        }
+
+        /*-show submenu when hovering over services submenu-*/
+        .servhover:hover {
+            display: block;
+        }
+
+        /*----banner----*/
+        /*--readjust position of banner text and banner image--*/
+        .banner3 {
+            top: 0vw;
+        }
+
+        /*--readjust font size and position of banner text--*/
+        .top {
+            font-size: 7vw;
+            top: 34%;
+        }
+
+        /*----main----*/
+        /*--map--*/
+        #laptopmap {
+            height: 33vw;
+            margin-bottom: 5vw;
+            margin-top: 15vw;
+        }
+
+        /*--address, phone number, and hours--*/
+        .addresshours {
+            font-size: 1.7vw;
+            padding-top: 5vw;
+            color: black;
+        }
+
+        /*-address and phone number-*/
+        .addressphone {
+            margin-top: 3vw;
+            padding-right: 3vw;
+            padding-left: 0vw;
+        }
+
+        /*-hours-*/
+        .laptophours {
+            font-size: 1.5vw;
+            white-space: nowrap;
+            padding: 0vw;
+            margin-top: 5vw;
+        }
+
+        /*----laptop contact us form----*/
+
+        /*--contact us container--*/
+
+        .laptopcontactcontainer {
+            padding-top: 5vw;
+            padding-bottom: 5vw;
+            border-left: 1px solid gray;
+            padding-left: 7vw;
+            padding-right: 0vw;
+        }
+
+        /*--Contact us title--*/
+        .laptoptitle {
+            color: pink;
+            font-family: "Charline";
+            font-size: 4vw;
+        }
+
+        /*--contact us form--*/
+        .labels {
+            font-size: 1.7vw;
+            color: black;
+        }
+
+        input {
+            padding: 0.5vw 1vw;
+            font-size: 1.3vw;
+        }
+
+                #message {
+        padding: 1vw;
+        font-size: 1.3vw;
+    }
+
+        .submit {
+            font-size: 2.5vw;
+            margin-top: 5vw;
+        }
+    }
+</style>
+
+<body>
+    <div class="container-fluid cancel">
+        <!--mobile/tablet navigation-->
+        <!--visible mobile/tablet navigation overhang/bar-->
+        <div class="nav">
+            <!--hamburger-->
+            <div class="hamburger" onclick="toggleMenu();">
+                <div class="hamburgerline"></div>
+                <div class="hamburgerline"></div>
+                <div class="hamburgerline"></div>
+            </div>
+            <!--end hamburger-->
+            <!--everything else in navigation-->
+            <div class="overhang col-10 text-center">
+                <a href="index.html" class="text">Pinkie Nails and Spa</a>
+            </div>
+            <!--end everything else in navigation-->
+        </div>
+        <!--end visible mobile/tablet navigation overhang/bar-->
+        <!--mobile/tablet drop-down menu-->
+        <div id="menu" class="slideup">
+            <div class="col-12 menu-item">
+                <a href="index.html">Home</a>
+            </div>
+
+            <div class="row menu-item">
+                <div class="col-11">
+                    <a href="ServicesBootstrap.html">Services</a>
+                </div>
+                <div class="col-1 cancel drop-arrow">
+                    <i class="down-arrow" onclick="subMenu();"></i>
+                </div>
+            </div>
+            <!--mobile/tablet drop-down services submenu-->
+            <div id="submenu" class="submenu-collapse">
+                <ul class="sub">
+                    <li class="item">
+                        <a href="ServicesBootstrap.html#manicure">Manicure</a>
+                    </li>
+                    <li class="item">
+                        <a href="ServicesBootstrap.html#sculpture">Sculpture Nails</a>
+                    </li>
+                    <li class="item">
+                        <a href="ServicesBootstrap.html#pedicure">Pedicure</a>
+                    </li>
+                    <li class="item">
+                        <a href="ServicesBootstrap.html#waxing">Waxing and Threading</a>
+                    </li>
+                    <li class="item">
+                        <a href="ServicesBootstrap.html#massage">Massage</a>
+                    </li>
+                    <li class="item">
+                        <a href="ServicesBootstrap.html#kids">Kids Service</a>
+                    </li>
+                    <li class="item">
+                        <a href="ServicesBootstrap.html#facial">Facial</a>
+                    </li>
+                </ul>
+            </div>
+            <!--end mobile/tablet drop-down services submenu-->
+            <div class="col-12 menu-item">
+                <a href="PoliciesBootstrap.html">Policies</a>
+            </div>
+
+            <div class="col-12 menu-item">
+                <a href="PartnersBootstrap.html">Partners</a>
+            </div>
+
+            <div class="col-12 menu-item">
+                <a href="ContactUsBootstrap.html">Contact Us</a>
+            </div>
+
+        </div>
+        <!--end mobile/tablet drop-down menu-->
+        <!--end all of mobile/tablet navigation-->
+
+        <!--visible laptop navigation-->
+        <div class="row lap-nav text-center">
+            <div class="col-3"></div>
+            <div class="col-1 text-center nav-item">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="col-1 text-center nav-item servlink">
+                <a href="ServicesBootstrap.html">Services</a>
+                <!--laptop services drop-down submenu-->
+                <div class="servhover absolute">
+                    <ul class="laptopsub">
+                        <li class="laptopitem">
+                            <a href="ServicesBootstrap.html#manicure">Manicure</a>
+                        </li>
+                        <li class="laptopitem">
+                            <a href="ServicesBootstrap.html#sculpture">Sculpture Nails</a>
+                        </li>
+                        <li class="laptopitem">
+                            <a href="ServicesBootstrap.html#pedicure">Pedicure</a>
+                        </li>
+                        <li class="laptopitem">
+                            <a href="ServicesBootstrap.html#waxing">Waxing and Threading</a>
+                        </li>
+                        <li class="laptopitem">
+                            <a href="ServicesBootstrap.html#massage">Massage</a>
+                        </li>
+                        <li class="laptopitem">
+                            <a href="ServicesBootstrap.html#kids">Kids Service</a>
+                        </li>
+                        <li class="laptopitem">
+                            <a href="ServicesBootstrap.html#facial">Facial</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--end laptop services drop-down submenu-->
+            </div>
+            <div class="col-1 text-center nav-item">
+                <a href="PoliciesBootstrap.html">Policies</a>
+            </div>
+            <div class="col-1 text-center nav-item">
+                <a href="PartnersBootstrap.html">Partners</a>
+            </div>
+            <div class="col-1 text-center nav-item">
+                <a href="ContactUsBootstrap.html">Contact Us</a>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <!--end visible laptop navigation-->
+        <!--banner-->
+        <div class="row relative banner3">
+            <div class="col-12 absolute top cancel">
+                <p>Contact Us</p>
+            </div>
+            <div class="col-12 cancel" height="500px">
+                <!--mobile banner image-->
+                <img id="banner" src="OLDEYF0mobile3.jpg">
+                <!--laptop/tablet banner image-->
+                <img id="tabletbanner" src="OLDEYF0cropped3.jpg">
+            </div>
+        </div>
+        <!--end banner-->
+        <!--mobile/tablet main content-->
+        <!--mobile map-->
+        <div class="row cancel mobilemap">
+            <div id="map" class="col-12"></div>
+        </div>
+        <!--end mobile map-->
+        <!--tablet map-->
+        <div class="row cancel tabletmap">
+            <div class="col-2"></div>
+            <div id="tabletmap" class="col-8"></div>
+            <div class="col-2"></div>
+        </div>
+        <!--end tablet map-->
+        <!--laptop map-->
+        <div class="row cancel laptopmap">
+            <div class="col-3"></div>
+            <div id="laptopmap" class="col-6"></div>
+            <div class="col-3"></div>
+        </div>
+        <!--end laptop map-->
+        <!--mobile/tablet contact information and contact form-->
+        <!--mobile/tablet title-->
+        <p class="titles">Where and When...</p>
+        <hr>
+        <!--mobile/tablet contact information-->
+        <div class="row mobilecontact">
+            <div class="col-12">
+                <div class="row address">
+                    <div class="col-12">
+                        <p>1054 Main Street, Newington, CT 06111</p>
+                        <p>860-665-8234</p>
+
+                    </div>
+                </div>
+                <div class="row mobilehours">
+                    <div class="col-6">
+                        <p>Monday-Friday</p>
+                        <p>Saturday</p>
+                        <p>Sunday</p>
+                    </div>
+                    <div class="col-6">
+                        <p>9:30AM-7PM</p>
+                        <p>9:30AM-6PM</p>
+                        <p>Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end mobile/tablet contact information-->
+        <!--mobile/tablet contact form title-->
+        <p class="titles" id="contact">Contact Us</p>
+        <hr>
+        <!--mobile/tablet contact form-->
+        <div class="row mobileform">
+            <div class="col-12">
+                <form action="mailto:simplefreedom777@gmail.com" method="post" enctype="text/plain">
+                    <div class="line">
+                        <label class="labels">Name</label>
+                        <br>
+                        <input type="text" name="name">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="line">
+                        <label class="labels">E-mail</label>
+                        <br>
+                        <input type="text" name="mail">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="line">
+                        <label class="labels">Message</label>
+                        <br>
+                        <textarea name="text" id="message" rows="5" cols="33">
+ </textarea>
+                        <br>
+                        <br>
+                    </div>
+                    <input class="submit" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <!--end mobile/tablet contact form-->
+        <!--mobile/tablet contact information and contact form-->
+        <!--laptop contact information and contact form-->
+        <div class="row laptopcontactinfo">
+            <!--laptop contact information-->
+            <div class="col-6">
+                <div class="row addresshours">
+                        <p class="laptoptitle">Where and When...</p>
+                    <div class="col-12 addressphone">
+                        <p>1054 Main Street, Newington, CT 06111</p>
+                        <p>860-665-8234</p>
+
+                    </div>
+
+                    <div class="col-6 laptophours">
+                        <p>Monday-Friday</p>
+                        <p>Saturday</p>
+                        <p>Sunday</p>
+                    </div>
+                    <div class="col-6 laptophours">
+                        <p>9:30AM-7PM</p>
+                        <p>9:30AM-6PM</p>
+                        <p>Closed</p>
+                    </div>
+                </div>
+
+            </div>
+            <!--end laptop contact information-->
+            <!--laptop contact form-->
+            <div class="col-6 laptopcontactcontainer">
+                <p class="laptoptitle">Contact Us</p>
+                <form action="mailto:simplefreedom777@gmail.com" method="post" enctype="text/plain">
+                    <div>
+                        <label class="labels">Name</label>
+                        <br>
+                        <input type="text" name="name">
+                        <br>
+                        <br>
+                    </div>
+                    <div>
+                        <label class="labels">E-mail</label>
+                        <br>
+                        <input type="text" name="mail">
+                        <br>
+                        <br>
+                    </div>
+                    <div>
+                        <label class="labels">Message</label>
+                        <br>
+                        <textarea name="text" id="message" rows="5" cols="33">
+</textarea>
+                        <br>
+                        <br>
+                    </div>
+                    <input class="submit" type="submit" value="Submit">
+                </form>
+            </div>
+            <!--end laptop contact form-->
+        </div>
+        <!--end laptop contact information and contact form-->
+    </div>
+</body>
+<!--Bootstrap javascript-->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+<script>
+
+    /*----function to toggle mobile/tablet drop-down navigation menu----*/
+
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        var sub = document.getElementById("submenu");
+        console.log(menu);
+        console.log(menu.style.display);
+
+        /*---if both menu and submenu are open/all menus are open, close both menu and submenu/all menus---*/
+
+        if (menu.classList.contains("slidedown") && menu.classList.contains("slidesub")) {
+            menu.classList.remove("slidedown");
+            menu.classList.remove("slidesub");
+            menu.classList.add("slideallup");
+        }
+
+        /*---if only the menu is open and the submenu is not open, close the menu---*/
+
+        else if (menu.classList.contains("slidedown")) {
+            menu.classList.remove("slidedown");
+            menu.classList.remove("slidesubup")
+            console.log(menu.classList);
+            menu.classList.add("slideup");
+            console.log(menu.classList);
+        }
+
+        /*---if menu is up, slide menu down without submenu---*/
+
+        else {
+            menu.classList.remove("slideup");
+            menu.classList.remove("slideallup");
+            sub.classList.add("submenu-collapse");
+            console.log(menu.classList);
+            menu.classList.add("slidedown");
+            console.log(menu.classList);
+        }
+    }
+
+    /*----function to toggle services drop-down submenu----*/
+
+    function subMenu() {
+        var sub = document.getElementById("submenu");
+        var menu = document.getElementById("menu");
+
+        /*---if submenu is up/collapsed, slide submenu down/display submenu---*/
+
+        if (sub.classList.contains("submenu-collapse")) {
+            sub.classList.remove("submenu-collapse");
+            menu.classList.remove("slidesubup");
+            menu.classList.add("slidesub");
+        }
+
+        /*---if submenu is down/expanded, slide submenu up/collapse submenu---*/
+
+        else {
+            sub.classList.add("submenu-collapse");
+            menu.classList.remove("slidesub");
+            menu.classList.add("slidesubup");
+        }
+    }
+    //Google Maps API code
+    // Initialize and add the map
+    function initMap() {
+        // The location of Uluru
+        var pinkie = { lat: 41.697314, lng: -72.722996 };
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), { zoom: 15, center: pinkie });
+        var tabletmap = new google.maps.Map(
+            document.getElementById('tabletmap'), { zoom: 15, center: pinkie });
+        var laptopmap = new google.maps.Map(
+            document.getElementById('laptopmap'), { zoom: 15, center: pinkie });
+
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({ position: pinkie, map: map });
+        var tabletmarker = new google.maps.Marker({ position: pinkie, map: tabletmap });
+        var laptopmarker = new google.maps.Marker({ position: pinkie, map: laptopmap });
+    }
+
+</script>
+<!--Google Maps API Code-->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLHniNzBOc6W3kVm-uOwvYf1rDbJ1uO5w&callback=initMap">
+</script>
+
+</html>

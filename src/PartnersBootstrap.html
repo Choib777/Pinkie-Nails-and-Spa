@@ -9,623 +9,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../assets/stylesheets/PartnersBootstrap.css">
 
     <title>Pinkie Nails and Spa - Partners</title>
 </head>
-<style>
-    /*----general----*/
-
-    /*--fonts--*/
-
-    @font-face {
-        font-family: "Chalk";
-        src: url("../assets/KGNoRegretsSketch.ttf");
-    }
-
-    @font-face {
-        font-family: "Charline";
-        src: url("../assets/Charline font.otf");
-    }
-
-    /*--convenient and quick positioning classes--*/
-
-    .absolute {
-        position: absolute;
-        z-index: 100;
-    }
-
-    .relative {
-        position: relative;
-    }
-
-    /*--convenient class to cancel any and all padding--*/
-
-    .cancel {
-        padding: 0;
-    }
-
-    /*--link behavior--*/
-
-    a:link {
-        color: pink;
-    }
-
-    a:visited {
-        color: pink;
-    }
-
-    a:hover {
-        text-decoration: none;
-    }
-
-    /*--all images take up full width of its container--*/
-
-    img {
-        width: 100%;
-    }
-
-    /*---hide non-mobile elements/design/layout---*/
-
-    /*--hide tablet design/layout/elements--*/
-
-    /*-hide tablet version of banner image-*/
-
-    #tabletbanner {
-        display: none;
-    }
-
-    /*-hide tablet version of partner logos-*/
-
-    .tabletthumb {
-        display: none;
-    }
-
-    /*--hide laptop design/layout/elements--*/
-
-    /*-hide laptop version of navigation-*/
-
-    .lap-nav {
-        display: none;
-    }
-
-    /*-hide laptop version of service submenu-*/
-
-    .servhover {
-        display: none;
-    }
-
-    /*-hide laptop version of partner logos-*/
-
-    .laptopthumb {
-        display: none;
-    }
-
-    /*----mobile/default website----*/
-
-    /*----nav - mobile and tablet----*/
-
-    .nav {
-        padding: 2% 5% 0% 5%;
-        position: fixed;
-        background-color: white;
-        width: 100%;
-        z-index: 200;
-        opacity: 0.9;
-        height: 13vw;
-    }
-
-    /*--overhang--*/
-
-    /*-hamburger-*/
-
-    .hamburgerline {
-        background-color: pink;
-        margin: 1.3vw 0;
-        height: 1vw;
-        width: 100%;
-        border-radius: 40%;
-    }
-
-    .hamburger {
-        width: 7%;
-        padding-top: 1%;
-    }
-
-    /*-everything else in overhang-*/
-
-    .overhang {
-        color: pink;
-        font-family: "Chalk";
-        font-size: 5vw;
-        justify-self: end;
-        padding-top: 1.5%;
-    }
-
-    /*----menu----*/
-
-    #menu {
-        width: 100%;
-        background-color: white;
-        position: fixed;
-        opacity: 0.9;
-        z-index: 200;
-        top: 13vw;
-    }
-
-    .menu-item {
-        color: pink;
-        font-family: "Charline";
-        padding: 5vw 7vw;
-        height: 12.5vw;
-        padding-right: 0vw;
-    }
-
-    /*--menu animations--*/
-
-    /*-slide menu down-*/
-
-    @keyframes slide {
-        from {
-            height: 0vw;
-        }
-        to {
-            height: 70vw;
-        }
-    }
-
-    /*-slide menu up-*/
-
-    @keyframes slideup {
-        from {
-            height: 70vw;
-        }
-        to {
-            height: 0vw;
-        }
-    }
-
-    /*--menu animation classes--*/
-
-    /*-slide menu up-*/
-
-    .slideup {
-        animation-name: slideup;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-        overflow: hidden;
-        padding-top: none;
-    }
-
-    /*-slide menu down-*/
-
-    .slidedown {
-        height: 75vw;
-        animation-name: slide;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-        overflow: hidden;
-    }
-
-    /*----submenu----*/
-
-    /*--design of down arrow to open services submenu--*/
-
-    .down-arrow {
-        border: solid pink;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 3px;
-        transform: rotate(45deg);
-        text-align: right;
-    }
-
-    /*--submenu/submenu design--*/
-
-    ul {
-        list-style: none;
-        margin-bottom: 0vw;
-    }
-
-    li {
-        color: pink;
-        font-family: "Charline";
-        font-size: 4vw;
-        padding: 2vw;
-    }
-
-    /*--submenu animations--*/
-
-    /*-expand menu for submenu/to open submenu-*/
-
-    @keyframes slidesub {
-        from {
-            height: 70vw;
-        }
-        to {
-            height: 137vw;
-        }
-    }
-
-    /*-contract/compress menu to close submenu but display menu-*/
-
-    @keyframes slidesubup {
-        from {
-            height: 137vw;
-        }
-        to {
-            height: 70vw;
-        }
-    }
-
-    /*-close both menu and submenu all together-*/
-
-    @keyframes slideallup {
-        from {
-            height: 137vw;
-        }
-        to {
-            height: 0vw;
-        }
-    }
-
-    /*-class to hide submenu-*/
-
-    .submenu-collapse {
-        display: none;
-    }
-
-    /*--submenu animation classes--*/
-
-    /*-expand menu to open submenu-*/
-
-    .slidesub {
-        animation-name: slidesub;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-        overflow: hidden;
-    }
-
-    /*-collapse submenu to return to regular menu-*/
-
-    .slidesubup {
-        animation-name: slidesubup;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-        overflow: hidden;
-    }
-
-    /*-close both menu and submenu all together-*/
-
-    .slideallup {
-        height: 137vw;
-        animation-name: slideallup;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-        overflow: hidden;
-    }
-
-    /*----banner----*/
-
-    /*--banner text--*/
-
-    .top {
-        font-size: 15vw;
-        font-family: "Chalk";
-        color: white;
-        top: 40%;
-        text-align: center;
-        width: 100%;
-        font-weight: 100;
-    }
-
-    /*--banner image--*/
-
-    #banner {
-        width: 100%;
-        height: auto;
-    }
-
-    /*----logos----*/
-
-    /*--top row partner logos and laptop smaller logos margin adjustment/alignment--*/
-
-    .thumb1 {
-        margin-top: 20vw;
-    }
-
-    /*--Babor and CND logos height/ratio adjustment--*/
-
-    .thumb {
-        height: 75vw;
-    }
-
-    /*--Voesh and OPI laptop alignment--*/
-
-    .thumb2 {
-        margin: 30vw 0vw;
-    }
-
-    /*--laptop logos padding adjustment--*/
-
-    .servimg {
-        padding-left: 15%;
-        padding-right: 15%;
-    }
-
-    /*----adjustments/changes for tablet website----*/
-
-    @media only screen and (min-width: 425px) {
-
-        /*----general----*/
-        /*--hide mobile/default design/layout/elements--*/
-        /*-hide mobile banner image-*/
-        #banner {
-            display: none;
-        }
-
-        /*-hide mobile/default logos-*/
-        #servicesection {
-            display: none;
-        }
-
-        /*--show tablet design/layout/elements--*/
-        /*-show tablet banner image-*/
-        #tabletbanner {
-            display: block;
-        }
-
-        /*-show tablet logos-*/
-        .tabletthumb {
-            display: flex;
-        }
-
-        /*--adjust menu animations--*/
-
-    /*-slide menu down-*/
-
-    @keyframes slide {
-        from {
-            height: 0vw;
-        }
-        to {
-            height: 45vw;
-        }
-    }
-
-    /*-slide menu up-*/
-
-    @keyframes slideup {
-        from {
-            height: 45vw;
-        }
-        to {
-            height: 0vw;
-        }
-    }
-
-        /*--adjust height of open menu--*/
-        .slidedown {
-            height: 45vw;
-        }
-
-        /*--adjust padding and height of menu-items-*/
-        .menu-item {
-            padding: 1vw 7vw;
-            height: 8.5vw;
-            padding-right: 0vw;
-        }
-
-        /*---tablet submenu---*/
-
-    /*--adjust submenu animations--*/
-
-    /*-expand menu for submenu/to open submenu-*/
-
-    @keyframes slidesub {
-        from {
-            height: 45vw;
-        }
-        to {
-            height: 100vw;
-        }
-    }
-
-    /*-contract/compress menu to close submenu but display menu-*/
-
-    @keyframes slidesubup {
-        from {
-            height: 100vw;
-        }
-        to {
-            height: 45vw;
-        }
-    }
-
-    /*-close both menu and submenu all together-*/
-
-    @keyframes slideallup {
-        from {
-            height: 100vw;
-        }
-        to {
-            height: 0vw;
-        }
-    }
-
-        /*--adjust submenu margin--*/
-
-        .sub {
-            margin-bottom: 3.5vw;
-        }
-
-        /*--adjust font size of submenu items--*/
-        li {
-            font-size: 2.5vw;
-        }
-
-        /*----banner----*/
-        /*--adjust the position of both text and image to accomodate tablet nav bar--*/
-        .banner3 {
-            top: 13vw;
-        }
-
-        /*--adjust the position and font-size of the banner text--*/
-        .top {
-            font-size: 10vw;
-            top: 30%;
-        }
-
-        /*----logos----*/
-        /*--tablet logos padding adjustment--*/
-        .logo {
-            padding: 10vw;
-        }
-
-        /*--Babor and CND logos height/ratio adjustment--*/
-        .thumb {
-            height: 25vw;
-        }
-
-        /*--top row partner logos and laptop smaller logos margin adjustment/alignment--*/
-        .thumb1 {
-            margin-top: 25vw;
-        }
-    }
-
-    /*----adjustments/changes for laptop website----*/
-
-    @media only screen and (min-width: 768px) {
-
-        /*----general----*/
-        /*---hide mobile/tablet elements---*/
-        /*--hide mobile/tablet nav bar--*/
-        .nav {
-            display: none;
-        }
-
-        /*-hide hamburger-*/
-        .hamburger {
-            display: none;
-        }
-
-        .hamburgerline {
-            display: none;
-        }
-
-        /*-hide overhang-*/
-        .overhang {
-            display: none;
-        }
-
-        /*--hide menu--*/
-        .menu {
-            display: none;
-        }
-
-        .menu-item {
-            display: none;
-        }
-
-        /*-hide menu animation classes-*/
-        .slideup {
-            display: none;
-        }
-
-        .slidedown {
-            display: none;
-        }
-
-        /*--hide submenu--*/
-        .sub {
-            display: none;
-        }
-
-        /*-hide submenu animation classes-*/
-        .slidesub {
-            display: none;
-        }
-
-        /*-hide tablet logos-*/
-        .tabletthumb {
-            display: none;
-        }
-
-        /*---reveal/show laptop elements---*/
-        /*--show laptop navigation--*/
-        .lap-nav {
-            display: flex;
-            padding: 1.5%;
-            color: pink;
-            white-space: nowrap;
-        }
-
-        /*--show laptop logos--*/
-        .laptopthumb {
-            display: flex;
-        }
-
-        /*----nav----*/
-        .nav-item {
-            text-align: center;
-            font-size: 1.1vw;
-        }
-
-        /*---service submenu---*/
-        .servhover {
-            top: 1.5vw;
-            background-color: white;
-            opacity: 0.9;
-            z-index: 500;
-            padding-top: 1.5vw;
-            border-radius: 5%;
-        }
-
-        .laptopsub {
-            padding-left: 0vw;
-        }
-
-        .laptopitem {
-            font-size: 1vw;
-            z-index: 500;
-            padding: 1vw;
-            text-align: left;
-        }
-
-        /*--submenu hover properties--*/
-        /*-show submenu when hovering over Services link/tab-*/
-        .servlink:hover .servhover {
-            display: block;
-
-        }
-
-        /*-show submenu when hovering over services submenu-*/
-        .servhover:hover {
-            display: block;
-        }
-
-        /*----banner----*/
-        /*--readjust position of banner text and banner image--*/
-        .banner3 {
-            top: 0vw;
-        }
-
-        /*--readjust font size and position of banner text--*/
-        .top {
-            font-size: 7vw;
-            top: 34%;
-        }
-
-        /*--top row partner logos and laptop smaller logos margin adjustment/alignment--*/
-        .thumb1 {
-            margin-top: 10vw;
-        }
-
-        /*--laptop logos main content padding adjustment--*/
-        .thumb3 {
-            padding: 10vw;
-        }
-    }
-</style>
 
 <body>
     <div class="container-fluid cancel">
@@ -754,9 +141,9 @@
             </div>
             <div class="col-12 cancel" height="500px">
                 <!--mobile banner image-->
-                <img id="banner" src="../assets/OLDEYF0mobile3.jpg">
+                <img id="banner" src="../assets/images/OLDEYF0mobile3.jpg">
                 <!--laptop/tablet banner image-->
-                <img id="tabletbanner" src="../assets/OLDEYF0cropped3.jpg">
+                <img id="tabletbanner" src="../assets/images/OLDEYF0cropped3.jpg">
             </div>
         </div>
         <!--end banner-->
@@ -764,22 +151,22 @@
         <div class="row text-center" id="servicesection">
             <div class="col-12 servimg">
                 <a href="https://us.babor.com/" target="_blank">
-                    <img class="thumb thumb1 img-fluid" src="../assets/Babor Logo.png" alt="Babor Logo">
+                    <img class="thumb thumb1 img-fluid" src="../assets/images/Babor Logo.png" alt="Babor Logo">
                 </a>
             </div>
             <div class="col-12 servimg">
                 <a href="https://cnd.com/" target="_blank">
-                    <img class="thumb img-fluid" src="../assets/CND logo.jpg" alt="CND Logo">
+                    <img class="thumb img-fluid" src="../assets/images/CND logo.jpg" alt="CND Logo">
                 </a>
             </div>
             <div class="col-12 servimg">
                 <a href="http://www.voesh.com/" target="_blank">
-                    <img class="thumb2 img-fluid" src="../assets/Voesh logo.jpg" alt="Voesh Logo">
+                    <img class="thumb2 img-fluid" src="../assets/images/Voesh logo.jpg" alt="Voesh Logo">
                 </a>
             </div>
             <div class="col-12 servimg">
                 <a href="https://www.opi.com/#jISEovTbAq94gCbw.97" target="_blank">
-                    <img class="thumb2 img-fluid" src="../assets/opi-logo.jpg" alt="OPI Logo">
+                    <img class="thumb2 img-fluid" src="../assets/images/opi-logo.jpg" alt="OPI Logo">
                 </a>
             </div>
         </div>
@@ -788,24 +175,24 @@
         <div class="row tabletthumb">
             <div class="col-6 logo">
                 <a href="https://us.babor.com/" target="_blank">
-                    <img class="thumb img-fluid thumb1" src="../assets/Babor Logo.png" alt="Babor Logo">
+                    <img class="thumb img-fluid thumb1" src="../assets/images/Babor Logo.png" alt="Babor Logo">
                 </a>
             </div>
             <div class="col-6 logo">
                 <a href="https://cnd.com/" target="_blank">
-                    <img class="thumb img-fluid thumb1" src="../assets/CND logo.jpg" alt="CND Logo">
+                    <img class="thumb img-fluid thumb1" src="../assets/images/CND logo.jpg" alt="CND Logo">
                 </a>
             </div>
         </div>
         <div class="row tabletthumb">
             <div class="col-6 logo">
                 <a href="http://www.voesh.com/" target="_blank">
-                    <img class="img-fluid" src="../assets/Voesh logo.jpg" alt="Voesh Logo">
+                    <img class="img-fluid" src="../assets/images/Voesh logo.jpg" alt="Voesh Logo">
                 </a>
             </div>
             <div class="col-6 logo">
                 <a href="https://www.opi.com/#jISEovTbAq94gCbw.97" target="_blank">
-                    <img class="img-fluid" src="../assets/opi-logo.jpg" alt="OPI Logo">
+                    <img class="img-fluid" src="../assets/images/opi-logo.jpg" alt="OPI Logo">
                 </a>
             </div>
         </div>
@@ -814,22 +201,22 @@
         <div class="row laptopthumb thumb3">
             <div class="col-3">
                 <a href="https://us.babor.com/" target="_blank">
-                    <img class="thumb img-fluid" src="../assets/Babor Logo.png" alt="Babor Logo">
+                    <img class="thumb img-fluid" src="../assets/images/Babor Logo.png" alt="Babor Logo">
                 </a>
             </div>
             <div class="col-3">
                 <a href="https://cnd.com/" target="_blank">
-                    <img class="thumb img-fluid" src="../assets/CND logo.jpg" alt="CND Logo">
+                    <img class="thumb img-fluid" src="../assets/images/CND logo.jpg" alt="CND Logo">
                 </a>
             </div>
             <div class="col-3">
                 <a href="http://www.voesh.com/" target="_blank">
-                    <img class="img-fluid thumb1" src="../assets/Voesh logo.jpg" alt="Voesh Logo">
+                    <img class="img-fluid thumb1" src="../assets/images/Voesh logo.jpg" alt="Voesh Logo">
                 </a>
             </div>
             <div class="col-3">
                 <a href="https://www.opi.com/#jISEovTbAq94gCbw.97" target="_blank">
-                    <img class="img-fluid thumb1" src="../assets/opi-logo.jpg" alt="OPI Logo">
+                    <img class="img-fluid thumb1" src="../assets/images/opi-logo.jpg" alt="OPI Logo">
                 </a>
             </div>
         </div>
@@ -845,69 +232,6 @@
     crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-<script>
-
-    /*----function to toggle mobile/tablet drop-down navigation menu----*/
-
-    function toggleMenu() {
-        var menu = document.getElementById("menu");
-        var sub = document.getElementById("submenu");
-        console.log(menu);
-        console.log(menu.style.display);
-
-        /*---if both menu and submenu are open/all menus are open, close both menu and submenu/all menus---*/
-
-        if (menu.classList.contains("slidedown") && menu.classList.contains("slidesub")) {
-            menu.classList.remove("slidedown");
-            menu.classList.remove("slidesub");
-            menu.classList.add("slideallup");
-        }
-
-        /*---if only the menu is open and the submenu is not open, close the menu---*/
-
-        else if (menu.classList.contains("slidedown")) {
-            menu.classList.remove("slidedown");
-            menu.classList.remove("slidesubup")
-            console.log(menu.classList);
-            menu.classList.add("slideup");
-            console.log(menu.classList);
-        }
-
-        /*---if menu is up, slide menu down without submenu---*/
-
-        else {
-            menu.classList.remove("slideup");
-            menu.classList.remove("slideallup");
-            sub.classList.add("submenu-collapse");
-            console.log(menu.classList);
-            menu.classList.add("slidedown");
-            console.log(menu.classList);
-        }
-    }
-
-    /*----function to toggle services drop-down submenu----*/
-
-    function subMenu() {
-        var sub = document.getElementById("submenu");
-        var menu = document.getElementById("menu");
-
-        /*---if submenu is up/collapsed, slide submenu down/display submenu---*/
-
-        if (sub.classList.contains("submenu-collapse")) {
-            sub.classList.remove("submenu-collapse");
-            menu.classList.remove("slidesubup");
-            menu.classList.add("slidesub");
-        }
-
-        /*---if submenu is down/expanded, slide submenu up/collapse submenu---*/
-
-        else {
-            sub.classList.add("submenu-collapse");
-            menu.classList.remove("slidesub");
-            menu.classList.add("slidesubup");
-        }
-    }
-
-</script>
+<script src="../assets/javascript/PartnersBootstrap.js"></script>
 
 </html>
